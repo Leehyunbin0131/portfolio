@@ -3,28 +3,35 @@
 [GitHub](https://github.com/Leehyunbin0131) ·
 [Email](mailto:leehyunbin0131@gmail.com)
 
-## About Me
+<h2 align="center">About Me</h2>
 
-<img src="assets/about-me.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="100%">
+<div align="center">
 
-<table>
-  <tr>
-    <td width="144" align="center" valign="middle">
-      <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="120">
-    </td>
-    <td valign="middle">
-      <strong>ROS 2로 로봇을 직접 개발하고 있습니다.</strong>
-      <p>자율주행과 SLAM, 서비스 로봇에 관심이 있습니다.</p>
-      <code>ROS 2</code> <code>자율주행</code> <code>SLAM</code> <code>서비스 로봇</code>
-    </td>
-  </tr>
-</table>
+<p>
+  <img src="assets/about-me.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="560">
+</p>
+
+<p>
+  <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="180">
+</p>
+
+자율주행과 SLAM, 서비스 로봇에 관심이 있습니다.
+
+### Tech Stack
+
+<p>
+  <img src="assets/badge-c.svg" alt="C" height="28">
+  <img src="assets/badge-python.svg" alt="Python" height="28">
+  <img src="assets/badge-ros2.svg" alt="ROS 2" height="28">
+</p>
 
 ### 학력 · 활동
 
-- **학력:** 대구대학교 컴퓨터소프트웨어전공 재학
-- **교육:** 42경산 4기
-- **리더십:** 전자전기공학부 AIS 동아리 회장
+<p>
+  <strong>학력</strong> · 대구대학교 컴퓨터소프트웨어전공 재학<br>
+  <strong>교육</strong> · 42경산 4기<br>
+  <strong>리더십</strong> · 전자전기공학부 AIS 동아리 회장
+</p>
 
 ### 수상 이력
 
@@ -34,6 +41,8 @@
 | **2021** | **대구기능경기대회**<br>모바일로보틱스 | 🥇 금메달 |
 | **2020** | **대구기능경기대회**<br>모바일로보틱스 | 🥈 은메달 |
 | **2019** | **IRC 국제로봇콘테스트**<br>자율형보행 | 🥉 동상 |
+
+</div>
 
 ---
 
