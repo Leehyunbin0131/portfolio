@@ -60,11 +60,7 @@
 
 ### Oh-My-MobileRobot
 
-모듈을 바꿔 확장할 수 있는 모바일 로봇 베이스와 ROS 모델
-
 <img src="assets/oh-my-mobilerobot.png" alt="Oh-My-MobileRobot 기본 베이스와 적재함·로봇암·디스플레이 확장형 CAD 렌더링" width="640">
-
-<sub>기본 베이스와 3가지 확장 개념 모델 · CAD 렌더링</sub>
 
 - **기간:** 2026.10 ~ 2026.11
 - **개발:** 개인 프로젝트
@@ -104,8 +100,6 @@ Python으로 CAD에서 시각화 메시와 URDF를 생성하는 변환 도구를
 ---
 
 ### claude-ros2-skills
-
-ROS 2 개발 절차와 진단 도구를 담은 AI 코딩 스킬 모음
 
 <img src="assets/claude-ros2-skills.png" alt="claude-ros2-skills 프로젝트 배너" width="640">
 
