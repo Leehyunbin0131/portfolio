@@ -5,12 +5,15 @@
 
 ## About Me
 
-<img src="assets/about-me.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="100%">
+<img src="assets/about-me-header.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="100%">
 
 <table>
   <tr>
-    <td width="30%" align="center" valign="top">
-      <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="220">
+    <td align="center" valign="top">
+      <picture>
+        <source media="(max-width: 600px)" srcset="assets/profile.jpg" width="110">
+        <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="220">
+      </picture>
     </td>
     <td valign="top">
       <p><strong>자율주행 · SLAM · 서비스 로봇</strong></p>

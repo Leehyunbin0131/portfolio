@@ -21,7 +21,7 @@
     <text x="36" y="112" fill="#F2EFE5" font-size="64" font-weight="700" letter-spacing="-2">From code to <tspan fill="#E89A7D">motion.</tspan></text>
   </g>
 
-  <!-- A small navigation map: obstacles, a planned route, and a mobile robot. -->
+  <!-- Compact navigation map: obstacles, a planned route, and a mobile robot. -->
   <g transform="translate(510 0) scale(.5)">
   <g stroke="#777260" stroke-width="2">
     <path d="M742 72H822V116H858"/>
