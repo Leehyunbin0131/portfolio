@@ -5,22 +5,35 @@
 
 ## About Me
 
-<img align="right" src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="160">
+<img src="assets/about-me.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="100%">
 
-ROS 2로 로봇을 직접 개발하고 있습니다.
-자율주행과 SLAM, 서비스 로봇에 관심이 있습니다.
+<table>
+  <tr>
+    <td width="144" align="center" valign="middle">
+      <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="120">
+    </td>
+    <td valign="middle">
+      <strong>ROS 2로 로봇을 직접 개발하고 있습니다.</strong>
+      <p>자율주행과 SLAM, 서비스 로봇에 관심이 있습니다.</p>
+      <code>ROS 2</code> <code>자율주행</code> <code>SLAM</code> <code>서비스 로봇</code>
+    </td>
+  </tr>
+</table>
+
+### 학력 · 활동
 
 - **학력:** 대구대학교 컴퓨터소프트웨어전공 재학
-- **활동:** 42경산 4기 · 전자전기공학부 AIS 동아리 회장
+- **교육:** 42경산 4기
+- **리더십:** 전자전기공학부 AIS 동아리 회장
 
-**수상**
+### 수상 이력
 
-- **(2021)** 전국기능경기대회 모바일로보틱스 동메달
-- **(2021)** 대구기능경기대회 모바일로보틱스 금메달
-- **(2020)** 대구기능경기대회 모바일로보틱스 은메달
-- **(2019)** IRC 국제로봇콘테스트 자율형보행 동상
-
-<br clear="all">
+| 연도 | 대회 · 분야 | 수상 |
+| :---: | :--- | :--- |
+| **2021** | **전국기능경기대회**<br>모바일로보틱스 | 🥉 동메달 |
+| **2021** | **대구기능경기대회**<br>모바일로보틱스 | 🥇 금메달 |
+| **2020** | **대구기능경기대회**<br>모바일로보틱스 | 🥈 은메달 |
+| **2019** | **IRC 국제로봇콘테스트**<br>자율형보행 | 🥉 동상 |
 
 ---
 
