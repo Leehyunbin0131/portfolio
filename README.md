@@ -3,46 +3,53 @@
 [GitHub](https://github.com/Leehyunbin0131) ·
 [Email](mailto:leehyunbin0131@gmail.com)
 
-<h2 align="center">About Me</h2>
+## About Me
 
-<div align="center">
+<img src="assets/about-me.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="100%">
 
-<p>
-  <img src="assets/about-me.svg" alt="From code to motion. — 코드에서 로봇의 움직임으로" width="560">
-</p>
-
-<p>
-  <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="180">
-</p>
-
-자율주행과 SLAM, 서비스 로봇에 관심이 있습니다.
-
-### Tech Stack
-
-<p>
-  <img src="assets/badge-c.svg" alt="C" height="28">
-  <img src="assets/badge-python.svg" alt="Python" height="28">
-  <img src="assets/badge-ros2.svg" alt="ROS 2" height="28">
-</p>
-
-### 학력 · 활동
-
-<p>
-  <strong>학력</strong> · 대구대학교 컴퓨터소프트웨어전공 재학<br>
-  <strong>교육</strong> · 42경산 4기<br>
-  <strong>리더십</strong> · 전자전기공학부 AIS 동아리 회장
-</p>
+<table>
+  <tr>
+    <td width="30%" align="center" valign="top">
+      <img src="assets/profile.jpg" alt="LEE HYUN BIN 프로필 사진" width="220">
+    </td>
+    <td valign="top">
+      <p><strong>자율주행 · SLAM · 서비스 로봇</strong></p>
+      <p>
+        <img src="assets/badge-c.svg" alt="C" height="24">
+        <img src="assets/badge-python.svg" alt="Python" height="24">
+        <img src="assets/badge-ros2.svg" alt="ROS 2" height="24">
+      </p>
+      <p><strong>학력</strong><br>대구대학교 컴퓨터소프트웨어전공 재학</p>
+      <p><strong>활동</strong><br>42경산 4기<br>전자전기공학부 AIS 동아리 회장</p>
+    </td>
+  </tr>
+</table>
 
 ### 수상 이력
 
-| 연도 | 대회 · 분야 | 수상 |
-| :---: | :--- | :--- |
-| **2021** | **전국기능경기대회**<br>모바일로보틱스 | 🥉 동메달 |
-| **2021** | **대구기능경기대회**<br>모바일로보틱스 | 🥇 금메달 |
-| **2020** | **대구기능경기대회**<br>모바일로보틱스 | 🥈 은메달 |
-| **2019** | **IRC 국제로봇콘테스트**<br>자율형보행 | 🥉 동상 |
-
-</div>
+<table>
+  <thead>
+    <tr><th scope="col">연도</th><th scope="col">수상</th><th scope="col">대회 · 분야</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>2021</strong></td><td nowrap>🥉 동메달</td>
+      <td><strong>전국기능경기대회</strong> · 모바일로보틱스</td>
+    </tr>
+    <tr>
+      <td><strong>2021</strong></td><td nowrap>🥇 금메달</td>
+      <td><strong>대구기능경기대회</strong> · 모바일로보틱스</td>
+    </tr>
+    <tr>
+      <td><strong>2020</strong></td><td nowrap>🥈 은메달</td>
+      <td><strong>대구기능경기대회</strong> · 모바일로보틱스</td>
+    </tr>
+    <tr>
+      <td><strong>2019</strong></td><td nowrap>🥉 동상</td>
+      <td><strong>IRC 국제로봇콘테스트</strong> · 자율형보행</td>
+    </tr>
+  </tbody>
+</table>
 
 ---
 
