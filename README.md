@@ -62,9 +62,17 @@
 
 <img src="assets/oh-my-mobilerobot.png" alt="Oh-My-MobileRobot 기본 베이스와 적재함·로봇암·디스플레이 확장형 CAD 렌더링" width="640">
 
+<p>
+  <img src="assets/badge-solidcraft.svg" alt="SolidCraft" height="24">
+  <img src="assets/badge-python.svg" alt="Python" height="24">
+  <img src="assets/badge-urdf-xacro.svg" alt="URDF/Xacro" height="24">
+  <img src="assets/badge-ros.svg" alt="ROS" height="24">
+  <img src="assets/badge-ros2.svg" alt="ROS 2" height="24">
+  <img src="assets/badge-rviz.svg" alt="RViz" height="24">
+</p>
+
 - **기간:** 2026.10 ~ 2026.11
 - **개발:** 개인 프로젝트
-- **기술:** SolidCraft, Python, URDF/Xacro, ROS · ROS 2, RViz
 - **현재 상태:** 기본 베이스·확장형 CAD 설계, 부품별 출력 파일 및 ROS 모델 공개
 - **코드·설계:** [GitHub](https://github.com/Leehyunbin0131/Oh-My-MobileRobot)
 
@@ -103,9 +111,15 @@ Python으로 CAD에서 시각화 메시와 URDF를 생성하는 변환 도구를
 
 <img src="assets/claude-ros2-skills.png" alt="claude-ros2-skills 프로젝트 배너" width="640">
 
+<p>
+  <img src="assets/badge-python.svg" alt="Python" height="24">
+  <img src="assets/badge-ros2-jazzy.svg" alt="ROS 2 Jazzy" height="24">
+  <img src="assets/badge-claude-code.svg" alt="Claude Code" height="24">
+  <img src="assets/badge-codex.svg" alt="Codex" height="24">
+</p>
+
 - **기간:** 2026.07 ~ 진행 중
 - **개발:** 개인 프로젝트
-- **기술:** Python, ROS 2 Jazzy, Claude Code, Codex
 - **현재 상태:** 스킬과 진단 도구 구현, 실제 로봇 적용 예정
 - **코드:** [GitHub](https://github.com/Leehyunbin0131/claude-ros2-skills)
 
