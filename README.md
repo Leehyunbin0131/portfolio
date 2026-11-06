@@ -102,7 +102,7 @@
 
 ### Oh-My-Control
 
-<img src="assets/oh-my-control.jpg" alt="Oh-My-Control 완성 로봇 전면 사진" width="640">
+<img src="assets/oh-my-control.png" alt="Oh-My-Control 1 kHz 모터 제어·센서 보정·TUI 진단 배너" width="640">
 
 <p>
   <img src="assets/badge-c.svg" alt="C" height="24">
