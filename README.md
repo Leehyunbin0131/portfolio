@@ -159,7 +159,7 @@
 
 - **기간:** 2026.11
 - **개발:** 개인 프로젝트
-- **현재 상태:** ROS 2 구동 브리지·EKF·Gazebo 2터미널 공항 환경·2D SLAM/AMCL·Nav2 자율주행(`State Lattice` + `DWB`)·Qt 통합 콘솔 구현 및 시뮬레이션 검증 완료, 실기(Jetson Orin) 배치 예정
+- **현재 상태:** ROS 2 구동 브리지·EKF·Gazebo 2터미널 공항 환경·2D SLAM/AMCL·State Lattice + DWB 자율주행·Qt 통합 콘솔 구현 및 시뮬레이션 검증 완료, Jetson Orin 실기 배치 예정
 - **저장소:** [GitHub](https://github.com/Leehyunbin0131/Oh-My-SLAM) ([아키텍처](https://github.com/Leehyunbin0131/Oh-My-SLAM/blob/main/docs/architecture.md) · [자율주행](https://github.com/Leehyunbin0131/Oh-My-SLAM/blob/main/docs/sim_navigation.md) · [로봇 콘솔](https://github.com/Leehyunbin0131/Oh-My-SLAM/blob/main/docs/operator_gui.md))
 
 <details>
@@ -167,20 +167,20 @@
 
 #### 배경 및 목표
 
-`Oh-My-MobileRobot`과 `Oh-My-Control`로 구축한 하드웨어·저수준 제어 계층을 실제 자율주행 스택으로 확장하기 위해, 시뮬레이션(Gazebo Harmonic)과 실물 로봇(Jetson Orin + Arduino Mega)이 **동일한 ROS 2 토픽·TF·명령 수명 계약**을 공유하는 Sim-to-Real 통합 워크스페이스를 설계했습니다.
-단순 주행 데모가 아니라 원본 명령 유효기간(300 ms), 단일 TF 소유권, 측정 기반 오도메트리, 라이다 사각지대의 낮은 장애물 기억과 운영자 콘솔까지 일관된 안전 계약으로 연결하는 것이 목표였습니다.
+`Oh-My-MobileRobot`과 `Oh-My-Control`로 구축한 하드웨어·저수준 제어 계층을 실제 자율주행 스택으로 확장하기 위해, Gazebo Harmonic 시뮬레이션과 Jetson Orin·Arduino Mega 실물 로봇이 **동일한 ROS 2 토픽·TF·명령 수명 계약**을 공유하는 Sim-to-Real 통합 워크스페이스를 설계했습니다.
+단순 주행 데모가 아니라 300 ms 원본 명령 유효기간, 단일 TF 소유권, 측정 기반 오도메트리, 라이다 사각지대의 낮은 장애물 기억과 운영자 콘솔까지 일관된 안전 계약으로 연결하는 것이 목표였습니다.
 
 #### 핵심 설계 및 구현
 
-- **Sim-to-Real 구동 브리지(`omslam_base`) 및 EKF 상태 추정:** `LifecycleNode` 기반 브리지에서 `TwistStamped` 원본 생성 시각을 보존하며 300 ms 명령 수명·바퀴별 상한(시뮬레이션 3–70 RPM, 실물 3–95 RPM)·3.0 RPM 최소 구동 하한(데드밴드 컷)을 적용했습니다. 목표 속도가 아닌 실제 엔코더 변화량의 SE(2) 적분과 장착 TF로 회전한 IMU 각속도를 `robot_localization`(2D EKF)으로 결합해 `odom → base_footprint`를 단독 발행합니다.
-- **Gazebo 공항 환경·2D SLAM 및 AMCL 위치추정:** 160 × 124 m 규모의 2터미널 가상 공항(좌석·카페·통로·32명 보행자)과 CAD 기반 가상 센서(LiDAR·IMU·RGB-D)를 구성하고, `slam_toolbox` 지도·포즈 그래프 저장/복원과 `AMCL` 재위치추정을 상호 배타적 모드로 통합했습니다.
-- **Nav2 자율주행(`State Lattice` + `DWB`) 및 RGB-D 낮은 장애물 3D 기억:** 공식 ROS 2 Jazzy `SmacPlannerLattice`와 커스텀 `DWB` 플러그인(속도 인식 궤적 생성·채워진 차체 footprint 충돌 검사·회전 방향 및 진동 평가)을 결합하고, 깊이 카메라 바닥 분리·3D 점유 메모리(`omm_perception` / `omm_costmap_layers`)로 라이다 높이 아래 장애물을 시야 밖에서도 유지합니다. `navigation_guard`가 센서·TF·명령 신선도와 큰 `map → odom` 보정을 감시해 이상 시 즉시 차단합니다.
-- **지도 중심 통합 콘솔(`Oh My Robot Console`):** PySide6/Qt Quick으로 지도 위 단일·다중 목적지 관리, 직접 조종, 바퀴별 RPM 상한 제어, 진입 금지 구역(Keepout) 편집·저장, 실시간 RGB/깊이 영상·구동 계측·시스템 로그를 한 화면에서 제어하는 데스크톱 앱을 구현했습니다.
+- **Sim-to-Real 구동 브리지와 EKF 상태 추정:** `LifecycleNode` 기반 `omslam_base`에서 `TwistStamped` 원본 생성 시각을 보존하며 300 ms 명령 수명, 시뮬레이션 3–70 RPM·실물 3–95 RPM 바퀴별 상한, 3.0 RPM 데드밴드 컷을 적용했습니다. 목표 속도가 아닌 실제 엔코더 변화량의 SE(2) 적분과 장착 TF로 회전한 IMU 각속도를 `robot_localization` 2D EKF로 결합해 `odom → base_footprint`를 단독 발행합니다.
+- **Gazebo 공항 환경·2D SLAM 및 AMCL 위치추정:** 좌석·카페·통로와 32명 보행자를 포함한 160 × 124 m 규모의 2터미널 가상 공항과 CAD 기반 LiDAR·IMU·RGB-D 가상 센서를 구성하고, `slam_toolbox` 지도·포즈 그래프 저장/복원과 `AMCL` 재위치추정을 상호 배타적 모드로 통합했습니다.
+- **Nav2 자율주행과 RGB-D 낮은 장애물 3D 기억:** 공식 ROS 2 Jazzy `SmacPlannerLattice` 전역 계획기와 속도 인식 궤적 생성, 채워진 차체 footprint 충돌 검사, 회전 방향·진동 평가를 추가한 커스텀 `DWB` 플러그인을 결합했습니다. 깊이 카메라 바닥 분리와 `omm_perception`·`omm_costmap_layers` 3D 점유 메모리로 라이다 높이 아래 장애물을 시야 밖에서도 유지하고, `navigation_guard`가 센서·TF·명령 신선도와 큰 `map → odom` 보정을 감시해 이상 시 즉시 차단합니다.
+- **지도 중심 통합 콘솔 `Oh My Robot Console`:** PySide6/Qt Quick으로 지도 위 단일·다중 목적지 관리, 직접 조종, 바퀴별 RPM 상한 제어, 진입 금지 구역 편집·저장, 실시간 RGB/깊이 영상·구동 계측·시스템 로그를 한 화면에서 다루는 데스크톱 앱을 구현했습니다.
 
 #### 검증 및 결과
 
 단위·회귀 테스트와 설치본 DWB 프로브, 격리 ROS 도메인의 헤드리스 Gazebo 통합 검증을 구축해 기구학·명령 수명·지연 정지·충돌 경계·5 cm 도착 판정·지도 번들 저장/복원·콘솔 제어권 전환을 자동 검증했습니다.
-시뮬레이션 5개 목표 연속 자율주행에서 충돌 0회와 목표 정지·오차 기준을 통과했으며, 시뮬레이션 계층을 기준으로 실물 Jetson Orin 이행(`P5`–`P8`)을 진행할 수 있는 통합 자율주행 워크스페이스를 완성했습니다.
+시뮬레이션 5개 목표 연속 자율주행에서 충돌 0회와 목표 정지·오차 기준을 통과했으며, 시뮬레이션 계층을 기준으로 실물 Jetson Orin 이행을 바로 진행할 수 있는 통합 자율주행 워크스페이스를 완성했습니다.
 
 </details>
 
